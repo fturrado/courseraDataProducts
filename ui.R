@@ -1,6 +1,15 @@
 library(shiny)
 
 shinyUI(navbarPage("Iris RandomForest Classifier",
+                   tabPanel("Welcome",h2("Shiny App for Coursera's course 'Developing Data Products'"),
+                                      h3("This app uses the iris dataset."),
+                            
+                            HTML("This app contains three tabs:<br/>
+<ol>
+<li>In the first one, called 'Descriptive Analitics', the user can view an histogram of each feature present in the iris dataset. </li>
+<li>In the second one, called 'Prescriptive Analitycs', a Random Forest classifier is trained and it tries to guess the Species value for the data introduced by the user.</li>
+<li>In the third and last one, called 'Raw Data', the user can visualize the original dataset. In this tab the user can filter the samples using the form provided.</li></ol>")),
+                   
                    tabPanel("Descriptive Analitycs",
                             sidebarLayout(
                                    sidebarPanel(
@@ -16,8 +25,7 @@ shinyUI(navbarPage("Iris RandomForest Classifier",
                                    
                                    # Show a plot of the generated distribution
                                    mainPanel(
-                                     plotOutput("distPlot"),
-                                     plotOutput("anotherPlot")
+                                     plotOutput("distPlot")
                                    )
                                  )
                             ),
