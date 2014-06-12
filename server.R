@@ -22,16 +22,6 @@ shinyServer(function(input, output) {
     hist(x, col = input$color, border = 'white')
   })
   
-  output$anotherPlot <- renderPlot({
-    x    <- iris[, as.numeric(input$feature)]  # Old Faithful Geyser data
-    # draw the histogram with the specified number of bins
-    plot(x, type='l');
-  })
-  #if (input$showSummary=="TRUE"){
-  
-  
-  #reactiveTable <- reactive(quote( renderTable({subset(iris,iris[, as.numeric(input$featureFilter)]==input$valueFilter)})),quoted=TRUE);
-  
   output$predicted <- renderText({
     inputClass <- vector();
     inputClass[1] <- as.numeric(input$seplen)
